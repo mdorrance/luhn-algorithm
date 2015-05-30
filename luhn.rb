@@ -9,8 +9,6 @@ class Luhn
 		new_card_number.chars.map(&:to_i)
 	end
 
-
-
 	def double_every_other_one
 		 numbers = reversed_card.map.with_index do |number, index|		
 			if (index + 1) % 2 == 0
