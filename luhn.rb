@@ -59,6 +59,8 @@ test5 = Luhn.new("6011797668867828")
 test5.check_validity?
 testamex = Luhn.new("342804633855673")
 testamex.check_validity?
+testamex2 = Luhn.new("342801633855673")
+testamex2.check_validity?
 
 #take a number and starting from the right, take every other number and double it
 #if the double is > 9 then split it and add the individual numbers
