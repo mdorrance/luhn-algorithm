@@ -5,12 +5,11 @@ class Luhn
 	end
 
 	def reversed_card
-		new_card_number = @card.reverse
-		new_card_number.chars.map(&:to_i)
+		@card.reverse.chars.map(&:to_i)
 	end
 
 	def double_every_other_one
-		 numbers = reversed_card.map.with_index do |number, index|		
+		 reversed_card.map.with_index do |number, index|
 			if (index + 1) % 2 == 0
 				(number * 2)				
 			else 
@@ -58,6 +57,8 @@ test4 = Luhn.new("4024007106512380")
 test4.check_validity?
 test5 = Luhn.new("6011797668867828")
 test5.check_validity?
+testamex = Luhn.new("342804633855673")
+testamex.check_validity?
 
 #take a number and starting from the right, take every other number and double it
 #if the double is > 9 then split it and add the individual numbers
